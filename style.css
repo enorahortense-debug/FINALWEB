@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Georgia, serif;
+}
+
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    background: #b30000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CONTENT */
+.content {
+    flex: 3;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    flex: 1;
+    background: #ddd;
+    padding: 20px;
+}
+
+/* FOOTER */
+.footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .twilight-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    .sparkle {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        animation-duration: 3s;
+    }
+
+    .shop-btn {
+        padding: 12px 28px;
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+
+    .icon-nav {
+        right: 12px;
+        top: 30%;
+    }
+
+    .icon-nav a {
+        font-size: 18px;
+    }
+}
+
+
+
+.hero {
+    min-height: 100vh;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("dc9cda9b3e28f3f3d9fe5ddccf51db2c.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Welcome to */
+.hero h1 {
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.hero h2 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+}
+
+
+/* Subtitle */
+.hero h3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #dcdcdc;
+}
+.shop-btn {
+    margin-top: 30px;
+    padding: 14px 40px;
+    background-color: #4b0000;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(120, 0, 0, 0.8);
+    transition: all 0.4s ease;
+}
+
+.shop-btn:hover {
+    background-color: #700000;
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(200, 0, 0, 1);
+}
+
+
+.twilight-title {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 4px;
+    overflow: hidden;
+}
+
+.twilight-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.6s forwards;
+}
+
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.sparkle {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: #f2f2f2;
+    animation: sparkle 2.5s infinite alternate;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0.6;
+        text-shadow: 0 0 5px rgba(255,255,255,0.4);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 
+            0 0 12px rgba(255,255,255,0.9),
+            0 0 25px rgba(180, 0, 0, 0.8);
+    }
+}
+.hero {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+   /* ==========================
+   GENERAL STYLING
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5; /* light background */
+    color: #000; /* black text */
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================
+   NAVIGATION ICON BAR
+========================== */
+.icon-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.icon-nav a {
+    font-size: 1.5rem;
+    color: #000;
+    transition: 0.3s;
+}
+
+.icon-nav a:hover {
+    color: #e63946; /* subtle red accent */
+}
+
+/* ==========================
+   MAIN SECTION CONTAINER
+========================== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 40px;
+    background-color: #ffffff; /* white background */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ==========================
+   CONTENT TEXT
+========================== */
+.content {
+    flex: 1 1 600px;
+    min-width: 300px;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #e63946; /* accent red */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 30px 0 10px;
+}
+
+/* ==========================
+   LISTS
+========================== */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+ul li::before {
+    content: "\f00c"; /* check icon from FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #e63946;
+}
+
+/* ==========================
+   CLOSING MESSAGE + BUTTON
+========================== */
+.closing-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.closing-message {
+    font-style: italic;
+    border-left: 4px solid #e63946;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    flex: 1;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+.shop-btn {
+    display: inline-block;
+    background-color: #e63946;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: #d62828;
+    transform: scale(1.05);
+}
+/* ==========================
+   GO BACK BUTTON
+========================== */
+.back-btn {
+    display: inline-block;
+    background-color: #777; /* gray for neutral/back */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+/* SIDEBAR: STACK IMAGE + INFO VERTICALLY */
+.sidebar {
+    flex: 1 1 300px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column; /* vertical stacking */
+    align-items: center;    /* center horizontally */
+    justify-content: flex-start; /* top align */
+    gap: 15px;
+}
+
+/* IMAGE STYLING */
+.sidebar img {
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block; /* ensures block so text doesn't wrap next to it */
+}
+
+/* PERSONAL INFO UNDER IMAGE */
+.personal-info {
+    text-align: center;
+    width: 100%; /* take full width of sidebar */
+    color: #000;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .closing-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .icon-nav {
+        gap: 15px;
+    }
+
+    .icon-nav a {
+        font-size: 1.3rem;
+    }
+
+    .content h2 {
+        font-size: 1.7rem;
+    }
+
+    .content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Align all 5 books horizontally */
+.catalogue {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 40px;
+    flex-wrap: nowrap;
+}
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 40px 0;
+    color: #2b0000;
+}
+.view-cart-container {
+    display: flex;
+    justify-content: center;   /* CENTER HORIZONTALLY */
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.cute-message {
+    text-align: center;
+}
+
+
+.book {
+    width: 220px;
+    background: rgba(255,255,255,0.95);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+
+.book img {
+    width: 100%;
+    height: auto;          /* keeps original proportions */
+    object-fit: contain;   /* shows full image without cropping */
+    border-radius: 8px;
+}
+
+.book:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.book:hover img {
+    transform: scale(1.08);
+}
+.bounce-title {
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    font-size: 42px;
+    margin: 30px 10px;
+    color: #2b0000;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+/* bouncing letters */
+.bounce-letter {
+    display: inline-block;
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width: 600px) {
+    .bounce-title {
+        font-size: 28px;      /* smaller text */
+        letter-spacing: 1px;  /* tighter spacing */
+    }
+}
+
+
+.year {
+    color: #555;
+    font-size: 14px;
+}
+
+.cute-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    font-style: italic;
+}
+
+.button-container {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    padding: 12px 25px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #444;
+}
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, #dcd5d5, #b30000);
+    background-attachment: fixed;
+}
+
+     /* Container for the centered View Cart button */
+.view-cart-container {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    margin: 50px 0 40px 0;     /* push it to bottom area */
+}
+
+.view-cart-btn {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-cart-btn:hover {
+    background-color: #eee;
+}
+      
+@media (max-width: 768px) {
+
+    .catalogue {
+        display: flex;
+        flex-direction: column;   /* stack books vertically */
+        align-items: center;      /* center each book */
+        gap: 25px;
+        padding: 30px 20px;
+        overflow-x: hidden;       /* remove horizontal scroll */
+    }
+
+    .book {
+        width: 90%;               /* responsive width */
+        max-width: 320px;         /* keeps nice card size */
+    }
+}
+
+
+/* Buttons touch-friendly */
+button, .checkout-btn, .home-btn {
+    min-height: 44px;
+    font-size: 16px;
+}@media (max-width: 768px) {
+
+    /* Stack everything nicely */
+    .cart-summary,
+    .checkout-container,
+    .thankyou-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    /* Inputs easier to type */
+    input, select, textarea {
+        font-size: 16px;
+    }
+
+    /* Bottom tab text smaller */
+    .bottom-tab .tab-item {
+        font-size: 12px;
+    }
+}
+.bottom-tab {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twilight Calculator Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin:0; padding:0;
+    background: linear-gradient(to bottom, #fce4ec, #e1bee7);
+    font-family: 'Quicksand', sans-serif;
+    display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 48px; color: #ff6f91; margin: 40px 0 20px;
+    animation: jump 1s infinite alternate; text-align:center;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-20px); }
+}
+
+.calculator-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px; padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 90%; max-width: 400px; text-align:center;
+}
+
+/* Display */
+#calc-display {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    font-size: 22px; border-radius: 12px; border: 1px solid #ddd6ea;
+    text-align:right;
+}
+
+/* Buttons */
+.calc-buttons {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.calc-buttons button {
+    padding: 18px 0; font-size: 18px; border-radius: 12px;
+    border: none; background: linear-gradient(135deg,#ff9ce3,#c68eff);
+    color: #fff; cursor: pointer; transition: transform 0.15s ease;
+}
+.calc-buttons button:hover { transform: translateY(-2px) scale(1.05); }
+.calc-buttons .operator { background: linear-gradient(135deg,#ff7b7b,#ffb6b6); }
+
+.result {
+    margin-top:20px; font-size:18px; font-weight:600; color:#6a1b9a; text-align:left;
+}
+
+.character-list {
+    margin-top:25px; font-size:16px; color:#5b5566; text-align:left;
+}
+.character-list h3 { color:#ff6f91; margin-bottom:10px; }
+.character-list ul { padding-left:20px; }
+
+@media(max-width:480px){
+    h1 { font-size:36px; }
+    #calc-display { font-size:20px; }
+    .calc-buttons button { font-size:16px; padding:15px 0; }
+}
+</style>
+</head>
+<body>
+
+<h1>PLAY OUR GAME</h1>
+<h2>calculate your fav character's age !!!!!</h2>
+
+<div class="calculator-card">
+    <input type="text" id="calc-display" placeholder="0" readonly>
+    <div class="calc-buttons">
+        <button>7</button><button>8</button><button>9</button><button class="operator">/</button>
+        <button>4</button><button>5</button><button>6</button><button class="operator">*</button>
+        <button>1</button><button>2</button><button>3</button><button class="operator">-</button>
+        <button>0</button><button>.</button><button id="clear">C</button><button class="operator">+</button>
+        <button id="equals" style="grid-column: span 4; background: linear-gradient(135deg,#7b6ef6,#c6c1ff);">=</button>
+    </div>
+    <div class="result" id="ageResult"></div>
+</div>
+
+<div class="character-list">
+    <h3>Try these Twilight characters:</h3>
+    <ul>
+        <li>Bella Swan: 1987</li>
+        <li>Edward Cullen: 1901</li>
+        <li>Alice Cullen: 1901</li>
+        <li>Jasper Hale: 1901</li>
+        <li>Rosalie Hale: 1915</li>
+        <li>Emmett Cullen: 1901</li>
+        <li>Carlisle Cullen: 1640</li>
+        <li>Esme Cullen: 1895</li>
+        <li>Jacob Black: 1990</li>
+    </ul>
+</div>
+
+<script>
+// Basic numeric calculator
+const display = document.getElementById('calc-display');
+const buttons = document.querySelectorAll('.calc-buttons button');
+let input = '';
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const value = btn.textContent;
+        if(value==='C'){
+            input=''; display.value=''; document.getElementById('ageResult').textContent='';
+        } else if(value==='='){
+            try{
+                const result = eval(input);
+                display.value = result;
+                // Check if result is plausible as a birth year
+                if(result >= 1000 && result <= 2026){
+                    const age = 2026 - result;
+                    document.getElementById('ageResult').textContent = `This character will be ${age} years old in 2026! 🧛‍♂️✨`;
+                } else {
+                    document.getElementById('ageResult').textContent = '';
+                }
+                input = result.toString();
+            }catch{
+                display.value='Error';
+                input='';
+                document.getElementById('ageResult').textContent='';
+            }
+        } else {
+            input += value;
+            display.value = input;
+        }
+    });
+});
+</script>
+
+</body>
+</html>

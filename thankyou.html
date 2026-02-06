@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <title>Thank You | Twilight Saga Bookstore</title>
+    <link rel="stylesheet" href="thankyou.css">
+    <nav class="icon-nav">
+    <a href="index.html" title="Home">
+        <i class="fas fa-home"></i>
+    </a>
+    <a href="info.html" title="Info">
+        <i class="fas fa-info-circle"></i>
+    </a>
+    <a href="catalog.html" title="Catalog">
+        <i class="fas fa-book"></i>
+    </a>
+    <a href="cart.html" title="Cart">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+    <a href="thankyou.html" title="Contact">
+        <i class="fas fa-envelope"></i>
+    </a>
+</nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="thankyou-container">
+        <h1>🎉 Thank You for Your Order!</h1>
+        <p>Your order has been successfully placed. We appreciate your support!</p>
+
+        <h2>Contact Us / Feedback</h2>
+        <form id="feedbackForm">
+            <label>Name</label>
+            <input type="text" id="fbName" placeholder="Your Name" required>
+
+            <label>Email</label>
+            <input type="email" id="fbEmail" placeholder="Your Email" required>
+
+            <label>Message</label>
+            <textarea id="fbMessage" placeholder="Your Feedback" required></textarea>
+
+            <button type="submit">Send Feedback</button>
+            <p id="fbSuccess" class="success"></p>
+        </form>
+
+<button class="play-game-btn" onclick="window.location.href='calculator.html'">
+  Play a Quick Game
+</button>
+        <!-- Back to Home / Shop button -->
+        <a href="index.html" class="home-btn">🏠 Back to Home</a>
+    </div>
+
+
+    <script>
+        const feedbackForm = document.getElementById("feedbackForm");
+        const fbSuccess = document.getElementById("fbSuccess");
+
+        feedbackForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            fbSuccess.textContent = "✅ Thank you for your feedback!";
+            feedbackForm.reset();
+        });
+    </script>
+    
+
+</body>
+</html>
